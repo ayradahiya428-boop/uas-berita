@@ -27,7 +27,7 @@ const NewsDetail = () => {
         <Card.Body>
           <Card.Title className="mb-3">{news.title}</Card.Title>
           <Card.Subtitle className="mb-3 text-muted">{news.date} | {news.category}</Card.Subtitle>
-          <Card.Text>{news.content}</Card.Text>
+          <Card.Text className="news-detail-content">{news.content}</Card.Text>
         </Card.Body>
       </Card>
     </div>
