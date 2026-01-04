@@ -1,24 +1,29 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
 
 const Layout = ({ children }) => {
+  const location = useLocation();
+
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+      <BootstrapNavbar bg="dark" variant="dark" expand="lg" className="mb-4">
         <Container>
-          <Navbar.Brand href="/">BeritaKu</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <BootstrapNavbar.Brand as={Link} to="/">BeritaKu</BootstrapNavbar.Brand>
+          <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
+          <BootstrapNavbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Beranda</Nav.Link>
-              <Nav.Link href="/kategori/terbaru">Terbaru</Nav.Link>
-              <Nav.Link href="/kategori/populer">Populer</Nav.Link>
+              <Nav.Link as={Link} to="/" active={location.pathname === '/'}>Beranda</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/politik" active={location.pathname.includes('/kategori/politik')}>Politik</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/teknologi" active={location.pathname.includes('/kategori/teknologi')}>Teknologi</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/ekonomi" active={location.pathname.includes('/kategori/ekonomi')}>Ekonomi</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/olahraga" active={location.pathname.includes('/kategori/olahraga')}>Olahraga</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/lingkungan" active={location.pathname.includes('/kategori/lingkungan')}>Lingkungan</Nav.Link>
+              <Nav.Link as={Link} to="/kategori/bisnis" active={location.pathname.includes('/kategori/bisnis')}>Bisnis</Nav.Link>
             </Nav>
-          </Navbar.Collapse>
+          </BootstrapNavbar.Collapse>
         </Container>
-      </Navbar>
+      </BootstrapNavbar>
 
       <Container>
         {children}
