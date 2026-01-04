@@ -1,18 +1,59 @@
-# React + Vite
+# BeritaKu - Aplikasi Berita Sederhana
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi berita sederhana yang dibangun dengan React dan Bootstrap, menggunakan pendekatan incremental development dengan Git commit.
 
-Currently, two official plugins are available:
+## Fitur-fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Tampilan berita utama dengan kategori
+- Halaman detail berita
+- Navigasi antar halaman
+- Desain responsif
+- Pengelompokan berita berdasarkan kategori
 
-## React Compiler
+## Struktur Project
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```
+src/
+├── components/          # Komponen reusable
+│   ├── Layout.jsx      # Layout utama (Navbar, Footer)
+│   ├── NewsCard.jsx    # Komponen kartu berita
+│   └── NewsList.jsx    # Komponen daftar berita
+├── pages/              # Halaman-halaman aplikasi
+│   ├── Home.jsx        # Halaman beranda
+│   └── NewsDetail.jsx  # Halaman detail berita
+├── services/           # Layanan dan data
+│   └── newsData.json   # Data berita dummy
+├── assets/             # Aset-aset statis
+├── App.jsx             # Komponen utama aplikasi
+└── main.jsx            # Entry point aplikasi
+```
 
-Note: This will impact Vite dev & build performances.
+## Cara Menjalankan Aplikasi
 
-## Expanding the ESLint configuration
+1. Pastikan Node.js dan npm sudah terinstall di sistem Anda
+2. Clone atau download project ini
+3. Masuk ke direktori project
+4. Install dependensi:
+   ```bash
+   npm install
+   ```
+5. Jalankan aplikasi dalam mode development:
+   ```bash
+   npm run dev
+   ```
+6. Buka browser dan akses `http://localhost:5173`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Perintah-perintah yang Tersedia
+
+- `npm run dev` - Menjalankan aplikasi dalam mode development
+- `npm run build` - Membangun aplikasi untuk produksi
+- `npm run preview` - Mempreview build produksi secara lokal
+- `npm run lint` - Menjalankan ESLint untuk pengecekan kode
+
+## Teknologi yang Digunakan
+
+- React 19
+- Vite
+- Bootstrap
+- React Router DOM
+- React Bootstrap
