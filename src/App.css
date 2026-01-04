@@ -116,6 +116,130 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+/* Styling for different card types */
+
+.hero-style {
+  border: 2px solid #3498db;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-style::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.hero-image-container {
+  position: relative;
+}
+
+.hero-image {
+  height: 250px;
+  object-fit: cover;
+}
+
+.hero-category-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-body {
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.hero-meta {
+  margin-bottom: 10px;
+}
+
+.hero-summary {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.hero-btn {
+  width: 100%;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.compact-style {
+  border-left: 4px solid #3498db;
+}
+
+.compact-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.compact-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.compact-summary {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.featured-style {
+  border-top: 4px solid #2ecc71;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+}
+
+.featured-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #2ecc71;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.featured-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.featured-summary {
+  color: #555;
+}
+
 @media (max-width: 768px) {
   .news-card {
     margin-bottom: 25px;
@@ -123,5 +247,14 @@ footer {
   
   .navbar-brand {
     font-size: 1.5rem;
+  }
+  
+  .hero-image {
+    height: 200px;
+  }
+  
+  .compact-image {
+    width: 80px;
+    height: 60px;
   }
 }
