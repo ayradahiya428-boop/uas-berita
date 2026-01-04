@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsCard from './NewsCard';
 
-const NewsList = ({ newsItems }) => {
+const NewsList = ({ newsItems, onNewsSelect, selectedNewsId }) => {
   // Define different styles for different news items
   const getCardStyle = (index) => {
     const styles = ['default', 'hero', 'compact', 'featured'];
@@ -13,9 +13,13 @@ const NewsList = ({ newsItems }) => {
   };
 
   return (
-    <div className="row">
+    <div className="news-list-container">
       {newsItems.map((news, index) => (
-        <div className="col-md-4 mb-4" key={news.id}>
+        <div 
+          key={news.id} 
+          className={`news-item ${selectedNewsId === news.id ? 'selected' : ''}`}
+          onClick={() => onNewsSelect(news)}
+        >
           <NewsCard news={news} styleType={getCardStyle(index)} />
         </div>
       ))}
