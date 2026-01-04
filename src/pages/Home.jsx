@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="mb-4">{title}</h1>
+      <h1 className="mb-4 page-title">{title}</h1>
       <NewsList newsItems={filteredNews} />
       {filteredNews.length === 0 && (
         <div className="text-center py-5">

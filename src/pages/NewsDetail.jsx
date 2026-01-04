@@ -25,7 +25,7 @@ const NewsDetail = () => {
       <Card>
         <Card.Img variant="top" src={news.imageUrl} style={{ height: '400px', objectFit: 'cover' }} />
         <Card.Body>
-          <Card.Title className="mb-3">{news.title}</Card.Title>
+          <Card.Title className="mb-3 page-title">{news.title}</Card.Title>
           <Card.Subtitle className="mb-3 text-muted">{news.date} | {news.category}</Card.Subtitle>
           <Card.Text className="news-detail-content">{news.content}</Card.Text>
         </Card.Body>
