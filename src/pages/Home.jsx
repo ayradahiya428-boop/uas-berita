@@ -1,7 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import NewsList from '../components/NewsList';
 
 const Home = () => {
   // Static news data
@@ -35,21 +33,7 @@ const Home = () => {
   return (
     <div>
       <h1 className="mb-4">Berita Terbaru</h1>
-      <div className="row">
-        {newsItems.map((news) => (
-          <div className="col-md-4 mb-4" key={news.id}>
-            <Card>
-              <Card.Img variant="top" src={news.imageUrl} />
-              <Card.Body>
-                <Card.Title>{news.title}</Card.Title>
-                <Card.Text className="text-muted small">{news.date} | {news.category}</Card.Text>
-                <Card.Text>{news.summary}</Card.Text>
-                <Link to={`/berita/${news.id}`} className="btn btn-primary">Baca Selengkapnya</Link>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-      </div>
+      <NewsList newsItems={newsItems} />
     </div>
   );
 };
