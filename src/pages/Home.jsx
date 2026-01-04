@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   // Static news data
@@ -43,7 +44,7 @@ const Home = () => {
                 <Card.Title>{news.title}</Card.Title>
                 <Card.Text className="text-muted small">{news.date} | {news.category}</Card.Text>
                 <Card.Text>{news.summary}</Card.Text>
-                <Button variant="primary">Baca Selengkapnya</Button>
+                <Link to={`/berita/${news.id}`} className="btn btn-primary">Baca Selengkapnya</Link>
               </Card.Body>
             </Card>
           </div>
